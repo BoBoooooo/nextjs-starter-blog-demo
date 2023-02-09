@@ -1,23 +1,3 @@
-# nextjs-starter-blog-demo
-
-## Start
-
-```bash
-yarn dev
-```
-
-## .dockerignore
-
-```
-node_modules
-.next
-.github
-.husky
-```
-
-## Dockerfile
-
-```
 # Install dependencies only when needed
 FROM node:16-alpine AS deps
 RUN apk add --no-cache libc6-compat
@@ -60,17 +40,3 @@ EXPOSE 3000
 ENV PORT 3000
 
 CMD ["node", "server.js"]
-
-```
-
-## Deploy
-
-```bash
-docker build -t blog-site:v1 .
-```
-
-```bash
-docker run --rm -it -p 8080:3000 --name my-blog blog-site:v1
-```
-
-Running on http://localhost:8080
